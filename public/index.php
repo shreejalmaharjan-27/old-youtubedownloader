@@ -17,7 +17,7 @@
     <input class="button" type="button" id="json-api" value="JSON API">
 </form>
 <div style="display:none;" id="hiddenlol">
-<video width="600" height="400" controls>
+<video width="800" height="800" controls>
     <source src="" type="video/mp4"/>
     <em>Sorry, your browser doesn't support HTML5 video.</em>
 </video>
