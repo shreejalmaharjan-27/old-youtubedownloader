@@ -14,7 +14,7 @@
 <form>
     <input class="input-res" type="text" placeholder="paste video url here" size="80" id="txt_url" required/>
     <input class="button" type="button" id="btn_fetch" value="Download Video" onclick="unhidelol()">
-    <input class="button" type="button" id="get-api" value="JSON API">
+    <input class="button" type="button" id="json-api" value="JSON API">
 </form>
 <div style="display:none;" id="hiddenlol">
 <video width="600" height="400" controls>
@@ -74,6 +74,15 @@
         });
 
     });
+    $("#json-api").click(function () {
+                var url = $("#txt_url").val();
+                if (url == null || url == "" || !url.includes("youtube")) {
+                    alert("Please enter a valid Youtube url.")
+                }
+                else
+                    window.location.href = "/video_info.php?url=" + url;
+            });
+        });
 </script>
 
 </body>
