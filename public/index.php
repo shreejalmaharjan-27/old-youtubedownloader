@@ -80,7 +80,7 @@
                     alert("Please enter a valid Youtube url.")
                 }
                 else
-                    window.location.href = "/video_info.php?url=" + url;
+                    window.location.href = "http://yt.app.rafled.com/video_info.php?url=" + url;
             });
         });
 </script>
