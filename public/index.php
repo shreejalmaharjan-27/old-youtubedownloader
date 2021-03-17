@@ -31,56 +31,57 @@
 }
     </script>
 <script>
-    $(function () {
+       $(function () {
 
-        $("#btn_fetch").click(function () {
+            $("#btn_fetch").click(function () {
 
-            var url = $("#txt_url").val();
-
-            var oThis = $(this);
-            oThis.attr('disabled', true);
-
-            $.get('video_info.php', {url: url}, function (data) {
-
-                console.log(data);
-
-                oThis.attr('disabled', false);
-
-                var links = data['links'];
-                var error = data['error'];
-
-                if (error) {
-                    alert('Error: ' + error);
-                    return;
-                }
-
-                // first link with video
-                var first = links.find(function (link) {
-                    return link['format'].indexOf('video') !== -1;
-                });
-
-                if (typeof first === 'undefined') {
-                    alert('No video found!');
-                    return;
-                }
-
-                var stream_url = 'stream.php?url=' + encodeURIComponent(first['url']);
-
-                var video = $("video");
-                video.attr('src', stream_url);
-                video[0].load();
-            });
-
-        });
-
-    });
-    $("#json-api").click(function () {
                 var url = $("#txt_url").val();
                 if (url == null || url == "" || !url.includes("youtube")) {
-                    alert("Please enter a valid Youtube url.")
+                    console.log
+                    alert("Please enter a valid Youtube url!")
+                }
+                else {
+
+                    var oThis = $(this);
+                    oThis.attr('disabled', true);
+
+                    $.get('video_info.php', { url: url }, function (data) {
+
+                        console.log(data);
+
+                        oThis.attr('disabled', false);
+
+                        var links = data['links'];
+                        var error = data['error'];
+
+                        if (error) {
+                            alert('Error: ' + error);
+                            return;
+                        }
+
+                        // first link with video
+                        var first = links[0];
+
+                        if (typeof first === 'undefined') {
+                            alert('No video found!');
+                            return;
+                        }
+
+                        var stream_url = 'stream.php?url=' + encodeURIComponent(first);
+
+                        var video = $("video");
+                        video.attr('src', stream_url);
+                        video[0].load();
+                    });
+                }
+            });
+            $("#json-api").click(function () {
+                var url = $("#txt_url").val();
+                if (url == null || url == "" || !url.includes("youtube")) {
+                    alert("Please enter a valid Youtube url")
                 }
                 else
-                    window.location.href = "http://yt.app.rafled.com/video_info.php?url=" + url;
+                    window.location.href = "video_info.php?url=" + url;
             });
         });
 </script>
