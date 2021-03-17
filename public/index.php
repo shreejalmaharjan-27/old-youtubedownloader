@@ -31,7 +31,7 @@
 <form action="video_info.php">
     <input class="input-res" type="text" name="url" placeholder="paste video url here" size="80" id="txt_url" required/>
     <input class="button" type="button" id="btn_fetch" value="Download Video" onclick="unhidelol()">
-    <input class="button" type="button" value="JSON API">
+    <input class="button" type="submit" value="JSON API">
      </form>
 <div style="display:none;" id="hiddenlol">
 <video width="800" height="800" controls>
