@@ -6,6 +6,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://static.rafled.com/rafled.com.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//analytics.rafled.com/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
 </head>
 <body>
 
@@ -14,8 +31,9 @@
 <form>
     <input class="input-res" type="text" placeholder="paste video url here" size="80" id="txt_url" required/>
     <input class="button" type="button" id="btn_fetch" value="Download Video" onclick="unhidelol()">
-    <input class="button" type="button" id="json-api" value="JSON API">
-</form>
+    </form><form action="video_info.php">
+    <input class="button" name="url" type="search" value="JSON API">
+     </form>
 <div style="display:none;" id="hiddenlol">
 <video width="800" height="800" controls>
     <source src="" type="video/mp4"/>
@@ -57,18 +75,9 @@
                 var video = $("video");
                 video.attr('src', stream_url);
                 video[0].load();
-                    });
-                }
-            });
-            $("#json-api").click(function () {
-                var url = $("#txt_url").val();
-                if (url == null || url == "" || !url.includes("youtube")) {
-                    alert("Please enter a valid Youtube url")
-                }
-                else
-                    window.location.href = "video_info.php?url=" + url;
             });
         });
+    });
 </script>
 
 </body>
