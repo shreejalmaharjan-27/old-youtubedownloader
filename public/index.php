@@ -28,11 +28,10 @@
 
     <h1>YouTube Video Downloader | <a href="https://rafled.com">rafled.com</a></h1>
  <center>
-<form>
-    <input class="input-res" type="text" placeholder="paste video url here" size="80" id="txt_url" required/>
+<form action="video_info.php">
+    <input class="input-res" type="text" name="url" placeholder="paste video url here" size="80" id="txt_url" required/>
     <input class="button" type="button" id="btn_fetch" value="Download Video" onclick="unhidelol()">
-    </form><form action="video_info.php">
-    <input class="button" name="url" type="search" value="JSON API">
+    <input class="button" type="button" value="JSON API">
      </form>
 <div style="display:none;" id="hiddenlol">
 <video width="800" height="800" controls>
