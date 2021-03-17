@@ -14,9 +14,10 @@
 <form>
     <input class="input-res" type="text" placeholder="paste video url here" size="80" id="txt_url" required/>
     <input class="button" type="button" id="btn_fetch" value="Download Video" onclick="unhidelol()">
+    <input class="button" type="button" id="get-api" value="JSON API">
 </form>
 <div style="display:none;" id="hiddenlol">
-<video width="800" height="600" controls>
+<video width="600" height="400" controls>
     <source src="" type="video/mp4"/>
     <em>Sorry, your browser doesn't support HTML5 video.</em>
 </video>
