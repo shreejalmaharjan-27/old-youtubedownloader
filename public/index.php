@@ -28,7 +28,7 @@
 
     <h1>YouTube Video Downloader | <a href="https://rafled.com">rafled.com</a></h1>
  <center>
-<form action="video_info.php">
+<form action="https://api.rafled.com/youtube-downloader/v1/">
     <input class="input-res" type="text" name="url" placeholder="paste video url here" size="80" id="txt_url" required/>
     <input class="button" type="button" id="btn_fetch" value="Download Video" onclick="unhidelol()">
     <input class="button" type="submit" value="JSON API">
