@@ -40,6 +40,9 @@
 </video>
     </center>
    </div>
+    <hr>
+    <p> [Early Access] Now you can choose Video Quality and Audio quality when downloading, check it out <a href="https://rafled.com/beta/ytd.php">here</a>.</p>
+    <hr>
     <p><b> Please Note:</b> This program is for personal use only. Downloading copyrighted material without permission is against <a href="https://www.youtube.com/static?template=terms">YouTube's terms of services</a>. By using this program, you are solely responsible for any copyright violations. We are not responsible for people who attempt to use this program in any way that breaks YouTube's terms of services.
     </p>
 <script type="text/javascript">
