@@ -56,7 +56,7 @@
             var url = $("#txt_url").val();
             var oThis = $(this);
             oThis.attr('disabled', true);
-            $.get('video_info.php', {url: url}, function (data) {
+            $.get('//api.rafled.com/youtube-downloader/v1/', {url: url}, function (data) {
                 console.log(data);
                 oThis.attr('disabled', false);
                 var links = data['links'];
@@ -73,7 +73,7 @@
                     alert('No video found!');
                     return;
                 }
-                var stream_url = 'stream.php?url=' + encodeURIComponent(first['url']);
+                var stream_url = '//api.rafled.com/youtube-downloader/v1/stream.php?url=' + encodeURIComponent(first['url']);
                 var video = $("video");
                 video.attr('src', stream_url);
                 video[0].load();
