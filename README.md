@@ -1,7 +1,7 @@
 <center>
-  
-![](https://img.shields.io/packagist/dt/Athlon1600/youtube-downloader.svg) ![](https://img.shields.io/github/last-commit/Athlon1600/youtube-downloader.svg) ![](https://img.shields.io/github/license/Athlon1600/youtube-downloader.svg)
-
+  <h2> [as of 2021-06-19]</h2>
+  <h3>API URI: api.rafled.com/youtube-downloader/v2/</h3>
+ Please view the js file here at https://static.rafled.com/lib/ytvdl/download.min.js to understand how to use the api, i no longer intend to update the app here or you can view the original repo at https://github.com/Athlon1600/youtube-downloader
 </center>
 
 # youtube-downloader
