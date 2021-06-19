@@ -67,7 +67,7 @@
                 }
                 // first link with video
                 var first = links.find(function (link) {
-                    return link['format'].indexOf('video') !== -1;
+                    return link['format'].indexOf('video') !== 0;
                 });
                 if (typeof first === 'undefined') {
                     alert('No video found!');
