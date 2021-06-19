@@ -28,7 +28,7 @@
 
     <h1>YouTube Video Downloader | <a href="https://rafled.com">rafled.com</a></h1>
  <center>
-<form action="https://api.rafled.com/youtube-downloader/v1/">
+<form action="https://api.rafled.com/youtube-downloader/v2/">
     <input class="input-res" type="text" name="url" placeholder="paste video url here" size="80" id="txt_url" required/>
     <input class="button" type="button" id="btn_fetch" value="Download Video" onclick="unhidelol()">
     <input class="button" type="submit" value="JSON API">
@@ -56,7 +56,7 @@
             var url = $("#txt_url").val();
             var oThis = $(this);
             oThis.attr('disabled', true);
-            $.get('//api.rafled.com/youtube-downloader/v1/', {url: url}, function (data) {
+            $.get('//api.rafled.com/youtube-downloader/v2/', {url: url}, function (data) {
                 console.log(data);
                 oThis.attr('disabled', false);
                 var links = data['links'];
@@ -73,7 +73,7 @@
                     alert('No video found!');
                     return;
                 }
-                var stream_url = '//api.rafled.com/youtube-downloader/v1/stream.php?url=' + encodeURIComponent(first['url']);
+                var stream_url = '//api.rafled.com/youtube-downloader/v2/stream.php?url=' + encodeURIComponent(first['url']);
                 var video = $("video");
                 video.attr('src', stream_url);
                 video[0].load();
