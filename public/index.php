@@ -52,33 +52,45 @@
     </script>
 <script>
     $(function () {
+
         $("#btn_fetch").click(function () {
+
             var url = $("#txt_url").val();
+
             var oThis = $(this);
             oThis.attr('disabled', true);
+
             $.get('//api.rafled.com/youtube-downloader/v2/', {url: url}, function (data) {
+
                 console.log(data);
+
                 oThis.attr('disabled', false);
+
                 var links = data['links'];
                 var error = data['error'];
+
                 if (error) {
                     alert('Error: ' + error);
                     return;
                 }
+
                 // first link with video
-                var first = links.find(function (link) {
-                    return link['format'].indexOf('video') !== 0;
-                });
+                var first = links[0];
+
                 if (typeof first === 'undefined') {
                     alert('No video found!');
                     return;
                 }
-                var stream_url = '//api.rafled.com/youtube-downloader/v2/stream.php?url=' + encodeURIComponent(first['url']);
+
+                var stream_url = '//api.rafled.com/youtube-downloader/v2/stream.php?url=' + encodeURIComponent(first);
+
                 var video = $("video");
                 video.attr('src', stream_url);
                 video[0].load();
             });
+
         });
+
     });
 </script>
 
