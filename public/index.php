@@ -75,7 +75,7 @@
                 }
 
                 // video links
-                var first = links[0];
+                var first = links;
 
                 if (typeof first === 'undefined') {
                     alert('No video found!');
