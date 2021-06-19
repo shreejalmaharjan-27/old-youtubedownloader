@@ -75,18 +75,13 @@
                 }
 
                 // video links
-                var first = links;
+                var first = links[0];
 
                 if (typeof first === 'undefined') {
                     alert('No video found!');
                     return;
                 }
 
-                var stream_url = '//api.rafled.com/youtube-downloader/v2/stream.php?url=' + encodeURIComponent(first);
-
-                var video = $("video");
-                video.attr('src', stream_url);
-                video[0].load();
             });
 
         });
